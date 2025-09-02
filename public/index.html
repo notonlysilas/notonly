@@ -1,82 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>not only</title>
+  <meta name="color-scheme" content="light only" />
   <style>
-    body {
-      background-color: #ffffff;
-      color: #000000;
-      font-family: "Times New Roman", serif;
-      font-size: 16px;
-      line-height: 1.6;
-      margin: 40px;
-      text-transform: lowercase;
+    html,body{margin:0;padding:0;background:#fff;color:#000}
+    body{
+      font-family:"Times New Roman", Times, serif;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.45;
+      padding:40px 44px 80px;
+      font-size:16px;
+      text-transform:lowercase;
     }
-    a {
-      color: inherit;
-      text-decoration: none;
+    .event{margin:0 0 26px}
+    .row{margin:0}
+    .date{margin-top:0}
+    .title{margin-top:2px}
+    .city{margin-top:2px; font-weight:400}
+    .tip{position:relative; cursor:default; color:inherit;}
+    .tip::after{
+      content:attr(data-tip);
+      position:absolute; left:0; top:-32px;
+      padding:5px 8px; font-size:12px; background:#000; color:#fff;
+      font-family:"Times New Roman", Times, serif;
+      font-weight:400;
+      white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .12s ease;
     }
-    a:hover {
-      text-decoration: underline;
+    .tip:hover::after{opacity:1}
+    .muted-all{color:#7a7a7a}
+    .inline-actions{display:inline-flex; gap:10px; align-items:center; margin-left:12px}
+    .btn{border:1px solid #000; padding:3px 10px; text-decoration:none; color:#000;}
+    .btn:hover{background:#000;color:#fff}
+
+    /* vinyl section stays prominent */
+    #vinyl{margin-top:60px}
+    #vinyl summary{
+      list-style:none; cursor:pointer; width:max-content;
+      font-weight:700; margin:0 0 8px; position:relative; color:#000; font-size:16px;
     }
-    .spacer {
-      margin: 60px 0;
+    #vinyl summary::after{content:""; display:block; height:1px; background:#000; margin-top:6px; width:118px;}
+    #vinyl summary::-webkit-details-marker{display:none}
+    .vinyl-body{margin-top:12px}
+    .vinyl-body p{margin:0 0 6px}
+    .btn-outline{display:inline-block; margin-top:12px; border:1px solid #000; padding:6px 12px; color:#000; text-decoration:none;}
+    .btn-outline:hover{background:#000;color:#fff}
+    .cover{margin:16px 0 12px; display:flex; justify-content:center}
+    .cover img{max-width:720px; width:100%; height:auto; display:block}
+
+    /* legal accordion styled as subtle links */
+    .legal-accordion{
+      margin-top:600px; /* pushed far down so scrolling is required */
+      display:flex;
+      gap:18px;
     }
-    .event {
-      margin-bottom: 16px;
+    .legal-accordion details{flex:1}
+    .legal-accordion summary{
+      list-style:none; cursor:pointer; display:inline; font-weight:400; margin:0; color:#7a7a7a; font-size:14px;
     }
-    .upcoming {
-      font-weight: bold;
-    }
-    .archive {
-      color: #888;
-    }
-    .vinyl {
-      cursor: pointer;
-      display: inline-block;
-      padding: 4px 8px;
-      border: 1px solid #000;
-      margin-top: 40px;
-    }
-    .vinyl-details {
-      display: none;
-      margin-top: 16px;
-    }
+    .legal-accordion summary::marker{display:none}
+    .legal-accordion summary::-webkit-details-marker{display:none}
+    .legal-accordion summary:hover{text-decoration:underline}
+    .legal-accordion .panel{margin-top:14px; font-size:14px; color:#7a7a7a}
+    .legal-accordion p{margin:0 0 8px}
   </style>
 </head>
 <body>
 
-<p>this is not only a website. it's a memory, a record, a sign. something happened. and something else is coming.</p>
+  <!-- event 1: yms -->
+  <div class="event">
+    <div class="date row muted-all">24.04.2025</div>
+    <div class="title row">
+      <span class="tip muted-all" data-tip="the event has sold out">not only | yellow mountain spaces</span>
+      <span class="inline-actions">
+        <a class="btn" href="https://www.youtube.com/watch?v=jezUz7sro54" target="_blank" rel="noopener">aftermovie</a>
+      </span>
+    </div>
+    <div class="city row muted-all">lisbon</div>
+  </div>
 
-<div class="spacer"></div>
+  <!-- event 2: dining studio -->
+  <div class="event">
+    <div class="date row"><b>10.10.2025</b></div>
+    <div class="title row">
+      <b class="tip" data-tip="tickets for this event are not yet available">not only | the dining studio</b>
+    </div>
+    <div class="city row"><b>berlin</b></div>
+  </div>
 
-<div>
-  <div class="event archive">thu, 24.04.25<br/>not only | yellow mountain spaces<br/>lisbon</div>
-</div>
+  <!-- vinyl prominent -->
+  <details id="vinyl">
+    <summary>not only 001</summary>
+    <div class="vinyl-body">
+      <p>
+        a memory pressed in wax — three artists · one night<br>
+        200 copies · hand numbered · no repress · no digital
+      </p>
+      <p>shinomi<br>fletchy boy<br>adriana ruas</p>
+      <p>artwork:<br>teddy frederick</p>
+      <a class="btn-outline" href="https://buy.stripe.com/dRmfZ90MDgjJ8iE07Gds400" target="_blank" rel="noopener">
+        pre-order now
+      </a>
+      <div class="cover">
+        <img src="cover.jpg" alt="not only 001 — cover artwork by teddy frederick">
+      </div>
+    </div>
+  </details>
 
-<div class="event upcoming">fri, 20.06.25<br/>not only | joti polizoakis<br/>berlin</div>
+  <!-- legal accordion subtle -->
+  <div class="legal-accordion">
+    <details class="legal">
+      <summary>impressum</summary>
+      <div class="panel">
+        <p>impressum</p>
+        <p>angaben gemäß § 5 tmg</p>
+        <p>not only<br>
+        inhaber: silas stempel<br>
+        greflinger straße 7<br>
+        22299 hamburg<br>
+        deutschland</p>
+        <p>kontakt:<br>
+        e-mail: hello@notonly.io</p>
+        <p>verantwortlich für den inhalt nach § 55 abs. 2 rstv<br>
+        silas stempel<br>
+        greflinger straße 7<br>
+        22299 hamburg</p>
+      </div>
+    </details>
 
-<div class="event upcoming">sat, 12.10.25<br/>not only | tba<br/>hamburg</div>
+    <details class="legal">
+      <summary>datenschutz</summary>
+      <div class="panel">
+        <p>diese seite verwendet keine cookies oder tracking-tools. bezahlungen erfolgen über stripe; es gelten deren datenschutzbestimmungen. nach einem kauf versenden wir eine einfache bestätigung per e-mail über zapier + smtp (strato). personenbezogene daten wie name, e-mail und adresse werden ausschließlich zur abwicklung der bestellung verwendet und auf wunsch gelöscht. für auskunft, berichtigung oder löschung bitte eine nachricht an hello@notonly.io senden.</p>
+      </div>
+    </details>
 
-<div class="spacer"></div>
-
-<div class="vinyl" onclick="toggleVinyl()">
-  not only 001
-</div>
-
-<div class="vinyl-details" id="vinyl-details">
-  <p>a song born from a night in lisbon. pressed into silence. soon to be heard again.<br/>100 copies. hand numbered.</p>
-  <p>→ pre-sale coming soon</p>
-</div>
-
-<script>
-  function toggleVinyl() {
-    const el = document.getElementById('vinyl-details');
-    el.style.display = el.style.display === 'block' ? 'none' : 'block';
-  }
-</script>
+    <details class="legal">
+      <summary>agb</summary>
+      <div class="panel">
+        <p>alle angebote von not only richten sich an endkunden. tonträger werden als vorbestellungen verkauft. der versand erfolgt, sobald die pressung eingetroffen ist; wir informieren per e-mail. alle preise verstehen sich in eur, ggf. zuzüglich versandkosten. das gesetzliche widerrufsrecht beträgt 14 tage ab erhalt der ware, ausgeschlossen bei geöffneter oder entsiegelter tonträger-verpackung. im falle von fehllieferungen oder transportschäden bitten wir um sofortige kontaktaufnahme unter hello@notonly.io.</p>
+      </div>
+    </details>
+  </div>
 
 </body>
 </html>
