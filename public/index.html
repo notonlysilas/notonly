@@ -20,16 +20,11 @@
     .date{margin-top:0}
     .title{margin-top:2px}
     .city{margin-top:2px; font-weight:400}
-    .tip{position:relative; cursor:default; color:inherit;}
-    .tip::after{
-      content:attr(data-tip);
-      position:absolute; left:0; top:-32px;
-      padding:5px 8px; font-size:12px; background:#000; color:#fff;
-      font-family:"Times New Roman", Times, serif;
-      font-weight:400;
-      white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .12s ease;
-    }
+    .tip{position:relative; cursor:default; color:inherit; outline:none; -webkit-tap-highlight-color:transparent;}
+    .tip::after{content:attr(data-tip); position:absolute; left:0; top:-32px; padding:5px 8px; font-size:12px; background:#000; color:#fff; font-family:"Times New Roman", Times, serif; font-weight:400; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .12s ease; z-index:10;}
     .tip:hover::after{opacity:1}
+    .tip:focus::after{opacity:1}
+    .tip:active::after{opacity:1}
     .muted-all{color:#7a7a7a}
     .inline-actions{display:inline-flex; gap:10px; align-items:center; margin-left:12px}
     .btn{border:1px solid #000; padding:3px 10px; text-decoration:none; color:#000;}
@@ -48,7 +43,7 @@
     .btn-outline{display:inline-block; margin-top:12px; border:1px solid #000; padding:6px 12px; color:#000; text-decoration:none;}
     .btn-outline:hover{background:#000;color:#fff}
     .cover{margin:16px 0 12px; display:flex; justify-content:center}
-    .cover img{max-width:720px; width:100%; height:auto; display:block}
+    .cover img{max-width:480px; width:100%; height:auto; display:block}
 
     /* legal accordion styled as subtle links */
     .legal-accordion{
@@ -75,7 +70,7 @@
       #vinyl summary{font-size:15px}
       #vinyl summary::after{width:96px}
       .cover img{max-width:100%}
-      .tip::after{top:-26px; font-size:12px; padding:4px 7px}
+      .tip::after{top:-34px; font-size:12px; padding:4px 7px}
       .legal-accordion{margin-top:420px; flex-direction:column; gap:12px}
       .legal-accordion details{flex:none}
       .legal-accordion summary{font-size:13px}
@@ -89,7 +84,7 @@
   <div class="event">
     <div class="date row muted-all">24.04.2025</div>
     <div class="title row">
-      <span class="tip muted-all" data-tip="the event has sold out">not only | yellow mountain spaces</span>
+      <span class="tip muted-all" tabindex="0" data-tip="the event has sold out">not only | yellow mountain spaces</span>
       <span class="inline-actions">
         <a class="btn" href="https://www.youtube.com/watch?v=jezUz7sro54" target="_blank" rel="noopener">aftermovie</a>
       </span>
@@ -101,7 +96,7 @@
   <div class="event">
     <div class="date row"><b>10.10.2025</b></div>
     <div class="title row">
-      <b class="tip" data-tip="tickets for this event are not yet available">not only | the dining studio</b>
+      <b class="tip" tabindex="0" data-tip="tickets for this event are not yet available">not only | the dining studio</b>
     </div>
     <div class="city row"><b>berlin</b></div>
   </div>
@@ -116,6 +111,7 @@
       </p>
       <p>shinomi<br>fletchy boy<br>adriana ruas</p>
       <p>artwork:<br>teddy frederick</p>
+      
       <a class="btn-outline" href="https://buy.stripe.com/dRmfZ90MDgjJ8iE07Gds400" target="_blank" rel="noopener">
         pre-order now
       </a>
@@ -163,4 +159,3 @@
 
 </body>
 </html>
-
