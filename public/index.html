@@ -64,7 +64,23 @@
     .legal-accordion summary::-webkit-details-marker{display:none}
     .legal-accordion summary:hover{text-decoration:underline}
     .legal-accordion .panel{margin-top:14px; font-size:14px; color:#7a7a7a}
-    .legal-accordion p{margin:0 0 8px}
+    .legal-accordion p{margin:0 0 8px}    
+    /* responsive tweaks */
+    @media (max-width: 640px){
+      body{font-size:15px; padding:28px 24px 100px}
+      .event{margin:0 0 22px}
+      .inline-actions{margin-left:10px}
+      .btn{padding:2px 9px}
+      #vinyl{margin-top:44px}
+      #vinyl summary{font-size:15px}
+      #vinyl summary::after{width:96px}
+      .cover img{max-width:100%}
+      .tip::after{top:-26px; font-size:12px; padding:4px 7px}
+      .legal-accordion{margin-top:420px; flex-direction:column; gap:12px}
+      .legal-accordion details{flex:none}
+      .legal-accordion summary{font-size:13px}
+      .legal-accordion .panel{font-size:13px}
+    }
   </style>
 </head>
 <body>
@@ -147,3 +163,4 @@
 
 </body>
 </html>
+
