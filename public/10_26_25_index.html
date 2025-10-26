@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>not only</title>
+  <meta name="color-scheme" content="light only" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <style>
+    html,body{margin:0;padding:0;background:#fff;color:#000}
+    body{
+      font-family:"Times New Roman", Times, serif;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.45;
+      padding:40px 44px 80px;
+      font-size:16px;
+      text-transform:lowercase;
+    }
+    .event{margin:0 0 26px}
+    .row{margin:0}
+    .date{margin-top:0}
+    .title{margin-top:2px}
+    .city{margin-top:2px; font-weight:400}
+    .tip{position:relative; cursor:default; color:inherit; outline:none; -webkit-tap-highlight-color:transparent;}
+    .tip::after{content:attr(data-tip); position:absolute; left:0; top:-32px; padding:5px 8px; font-size:12px; background:#000; color:#fff; font-family:"Times New Roman", Times, serif; font-weight:400; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .12s ease; z-index:10;}
+    .tip:hover::after{opacity:1}
+    .tip:focus::after{opacity:1}
+    .tip:active::after{opacity:1}
+    .muted-all{color:#7a7a7a}
+    .inline-actions{display:inline-flex; gap:10px; align-items:center; margin-left:12px}
+    .btn{border:1px solid #000; padding:3px 10px; text-decoration:none; color:#000;}
+    .btn:hover{background:#000;color:#fff}
+
+    /* vinyl section stays prominent */
+    #vinyl{margin-top:60px}
+    #vinyl summary{
+      list-style:none; cursor:pointer; width:max-content;
+      font-weight:700; margin:0 0 8px; position:relative; color:#000; font-size:16px;
+    }
+    #vinyl summary::after{content:""; display:block; height:1px; background:#000; margin-top:6px; width:118px;}
+    #vinyl summary::-webkit-details-marker{display:none}
+    .vinyl-body{margin-top:12px}
+    .vinyl-body p{margin:0 0 6px}
+    .btn-outline{display:inline-block; margin-top:12px; border:1px solid #000; padding:6px 12px; color:#000; text-decoration:none;}
+    .btn-outline:hover{background:#000;color:#fff}
+    .cover{margin:16px 0 12px; display:flex; justify-content:center}
+    .cover img{max-width:480px; width:100%; height:auto; display:block}
+
+    /* legal accordion styled as subtle links */
+    .legal-accordion{
+      margin-top:600px; /* pushed far down so scrolling is required */
+      display:flex;
+      gap:18px;
+    }
+    .legal-accordion details{flex:1}
+    .legal-accordion summary{
+      list-style:none; cursor:pointer; display:inline; font-weight:400; margin:0; color:#7a7a7a; font-size:14px;
+    }
+    .legal-accordion summary::marker{display:none}
+    .legal-accordion summary::-webkit-details-marker{display:none}
+    .legal-accordion summary:hover{text-decoration:underline}
+    .legal-accordion .panel{margin-top:14px; font-size:14px; color:#7a7a7a}
+    .legal-accordion p{margin:0 0 8px}    
+    /* responsive tweaks */
+    @media (max-width: 640px){
+      body{font-size:15px; padding:28px 24px 100px}
+      .event{margin:0 0 22px}
+      .inline-actions{margin-left:10px}
+      .btn{padding:2px 9px}
+      #vinyl{margin-top:44px}
+      #vinyl summary{font-size:15px}
+      #vinyl summary::after{width:96px}
+      .cover img{max-width:100%}
+      .tip::after{top:-34px; font-size:12px; padding:4px 7px}
+      .legal-accordion{margin-top:420px; flex-direction:column; gap:12px}
+      .legal-accordion details{flex:none}
+      .legal-accordion summary{font-size:13px}
+      .legal-accordion .panel{font-size:13px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- event 1: yms -->
+  <div class="event">
+    <div class="date row muted-all">24.04.2025</div>
+    <div class="title row">
+      <span class="tip muted-all" tabindex="0" data-tip="the event has sold out">not only | yellow mountain spaces</span>
+      <span class="inline-actions">
+        <a class="btn" href="https://www.youtube.com/watch?v=jezUz7sro54" target="_blank" rel="noopener">aftermovie</a>
+      </span>
+    </div>
+    <div class="city row muted-all">lisbon</div>
+  </div>
+
+  <!-- event 2: dining studio -->
+  <div class="event">
+    <div class="date row muted-all">10.10.2025</div>
+    <div class="title row">
+      <span class="tip muted-all" tabindex="0" data-tip="the event has sold out">not only | the dining studio</span>
+      <span class="inline-actions">
+        <a class="btn" href="https://www.youtube.com/watch?v=leneJ0oleHU" target="_blank" rel="noopener">aftermovie</a>
+      </span>
+    </div>
+    <div class="city row muted-all">berlin</div>
+  </div>
+
+  <!-- vinyl prominent -->
+  <details id="vinyl">
+    <summary>not only 001</summary>
+    <div class="vinyl-body">
+      <p>
+        a memory pressed in wax — three artists · one night<br>
+        200 copies · hand numbered · no repress · no digital
+      </p>
+      <p>shinomi<br>fletchy boy<br>adriana ruas</p>
+      <p>total running time: 29:31 min</p>
+      <p>artwork:<br>teddy frederick</p>
+      
+      <a class="btn-outline" href="https://buy.stripe.com/dRmfZ90MDgjJ8iE07Gds400" target="_blank" rel="noopener">
+        pre-order now
+      </a>
+      <div class="cover">
+        <img src="cover.jpg" alt="not only 001 — cover artwork by teddy frederick">
+      </div>
+    </div>
+  </details>
+
+  <!-- legal accordion subtle -->
+  <div class="legal-accordion">
+    <details class="legal">
+      <summary>impressum</summary>
+      <div class="panel">
+        <p>impressum</p>
+        <p>angaben gemäß § 5 tmg</p>
+        <p>not only<br>
+        inhaber: silas stempel<br>
+        greflinger straße 7<br>
+        22299 hamburg<br>
+        deutschland</p>
+        <p>kontakt:<br>
+        e-mail: hello@notonly.io</p>
+        <p>verantwortlich für den inhalt nach § 55 abs. 2 rstv<br>
+        silas stempel<br>
+        greflinger straße 7<br>
+        22299 hamburg</p>
+      </div>
+    </details>
+
+    <details class="legal">
+      <summary>datenschutz</summary>
+      <div class="panel">
+        <p>diese seite verwendet keine cookies oder tracking-tools. bezahlungen erfolgen über stripe; es gelten deren datenschutzbestimmungen. nach einem kauf versenden wir eine einfache bestätigung per e-mail über zapier + smtp (strato). personenbezogene daten wie name, e-mail und adresse werden ausschließlich zur abwicklung der bestellung verwendet und auf wunsch gelöscht. für auskunft, berichtigung oder löschung bitte eine nachricht an hello@notonly.io senden.</p>
+      </div>
+    </details>
+
+    <details class="legal">
+      <summary>agb</summary>
+      <div class="panel">
+        <p>alle angebote von not only richten sich an endkunden. tonträger werden als vorbestellungen verkauft. der versand erfolgt, sobald die pressung eingetroffen ist; wir informieren per e-mail. alle preise verstehen sich in eur, ggf. zuzüglich versandkosten. das gesetzliche widerrufsrecht beträgt 14 tage ab erhalt der ware, ausgeschlossen bei geöffneter oder entsiegelter tonträger-verpackung. im falle von fehllieferungen oder transportschäden bitten wir um sofortige kontaktaufnahme unter hello@notonly.io.</p>
+      </div>
+    </details>
+  </div>
+
+</body>
+</html>
