@@ -17,42 +17,69 @@
       text-transform:lowercase;
       font-weight:400;
     }
+
+    .friends{margin:0 0 56px}
+    .friends-title{font-weight:700; margin:0 0 6px}
+    .friends p{margin:0 0 6px; font-weight:400}
+    .friends-actions{margin-top:12px}
+
     .event{margin:0 0 26px}
     .row{margin:0}
-    .date{margin-top:0;font-weight:700;}
-    .title{margin-top:2px;font-weight:700;}
-    .city{margin-top:2px; font-weight:700}
-    .tip{position:relative; color:inherit; outline:none; -webkit-tap-highlight-color:transparent; font-weight:700;}
-    .tip::after{content:attr(data-tip); position:absolute; left:0; top:-32px; padding:5px 8px; font-size:12px; background:#000; color:#fff; font-family:"Times New Roman", Times, serif; font-weight:400; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .12s ease; z-index:10;}
+    .date{margin-top:0;font-weight:700}
+    .title{margin-top:2px;font-weight:700}
+    .city{margin-top:2px;font-weight:700}
+
+    .tip{position:relative; color:inherit; outline:none; -webkit-tap-highlight-color:transparent; font-weight:700}
+    .tip::after{
+      content:attr(data-tip);
+      position:absolute; left:0; top:-32px;
+      padding:5px 8px; font-size:12px; background:#000; color:#fff;
+      font-family:"Times New Roman", Times, serif; font-weight:400;
+      white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .12s ease; z-index:10;
+    }
     .tip:hover::after{opacity:1}
-    .muted-all{color:#7a7a7a;font-weight:400;}
+    .tip:focus::after{opacity:1}
+    .tip:active::after{opacity:1}
+
+    .muted-all{color:#7a7a7a;font-weight:400}
     .inline-actions{display:inline-flex; gap:10px; align-items:center; margin-left:12px}
-    .btn{border:1px solid #000; padding:3px 10px; text-decoration:none; color:#000; font-weight:400;}
+    .btn{border:1px solid #000; padding:3px 10px; text-decoration:none; color:#000; font-weight:400}
     .btn:hover{background:#000;color:#fff}
 
-    #vinyl{margin-top:60px}
-    #vinyl summary{list-style:none; cursor:pointer; width:max-content; font-weight:700; margin:0 0 8px; position:relative; color:#000; font-size:16px;}
-    #vinyl summary::after{content:""; display:block; height:1px; background:#000; margin-top:6px; width:118px;}
-    #vinyl summary::-webkit-details-marker{display:none}
-
     .event-details{margin:0}
-    .event-details summary{list-style:none; cursor:pointer; font-weight:700; color:#000; width:max-content; display:block}
+    .event-details summary{
+      list-style:none;
+      cursor:pointer;
+      font-weight:700;
+      color:#000;
+      width:max-content;
+      display:block;
+    }
     .event-details summary::-webkit-details-marker{display:none}
+    .event-image{margin:16px 0 12px; display:flex; flex-direction:column; align-items:center}
+    .event-image img{max-width:480px; width:100%; height:auto; display:block}
+    .event-credit{margin-top:8px; font-size:14px; color:#7a7a7a; font-weight:400}
 
-    .vinyl-body{margin-top:12px;font-weight:400;}
-    .vinyl-body p{margin:0 0 6px;font-weight:400;}
-    .btn-outline{display:inline-block; margin-top:12px; border:1px solid #000; padding:6px 12px; color:#000; text-decoration:none; font-weight:400;}
+    #vinyl{margin-top:60px}
+    #vinyl summary{
+      list-style:none; cursor:pointer; width:max-content;
+      font-weight:700; margin:0 0 8px; position:relative; color:#000; font-size:16px;
+    }
+    #vinyl summary::after{content:""; display:block; height:1px; background:#000; margin-top:6px; width:118px}
+    #vinyl summary::-webkit-details-marker{display:none}
+    .vinyl-body{margin-top:12px;font-weight:400}
+    .vinyl-body p{margin:0 0 6px;font-weight:400}
+    .btn-outline{display:inline-block; margin-top:12px; border:1px solid #000; padding:6px 12px; color:#000; text-decoration:none; font-weight:400}
     .btn-outline:hover{background:#000;color:#fff}
-
     .cover{margin:16px 0 12px; display:flex; justify-content:center}
     .cover img{max-width:480px; width:100%; height:auto; display:block}
 
-    .event-image{margin:16px 0 12px; display:flex; justify-content:center}
-    .event-image img{max-width:480px; width:100%; height:auto; display:block}
-
-    .legal-accordion{margin-top:600px; display:flex; gap:18px;}
+    .legal-accordion{margin-top:600px; display:flex; gap:18px}
     .legal-accordion details{flex:1}
-    .legal-accordion summary{list-style:none; cursor:pointer; display:inline; font-weight:400; margin:0; color:#7a7a7a; font-size:14px;}
+    .legal-accordion summary{
+      list-style:none; cursor:pointer; display:inline;
+      font-weight:400; margin:0; color:#7a7a7a; font-size:14px;
+    }
     .legal-accordion summary:hover{text-decoration:underline}
     .legal-accordion .panel{margin-top:14px; font-size:14px; color:#7a7a7a}
 
@@ -63,6 +90,36 @@
   </style>
 </head>
 <body>
+
+  <!-- not only friends -->
+  <div class="friends">
+    <div class="friends-title">not only | friends</div>
+    <p>first access, small invitations, city by city.<br>
+    join your local whatsapp group for first access to future gatherings.</p>
+    <div class="friends-actions">
+      <a class="btn" href="https://chat.whatsapp.com/BjE8arTI9xO4tCJ6JbhrKj?mode=gi_t" target="_blank" rel="noopener">lisbon</a>
+    </div>
+  </div>
+
+  <!-- event -2: friends lisbon -->
+  <div class="event">
+    <div class="date row muted-all">13.06.2026</div>
+    <details class="event-details">
+      <summary>
+        <div class="title row">
+          <span class="tip muted-all" tabindex="0" data-tip="the event has sold out">not only | friends</span>
+          <span class="inline-actions">
+            <a class="btn" href="https://chat.whatsapp.com/BjE8arTI9xO4tCJ6JbhrKj?mode=gi_t" target="_blank" rel="noopener">join group</a>
+          </span>
+        </div>
+        <div class="city row muted-all">lisbon</div>
+      </summary>
+      <div class="event-image">
+        <img src="artwork-friends-lisbon.png" alt="not only | friends — lisbon artwork">
+        <div class="event-credit">artist: mona crusius</div>
+      </div>
+    </details>
+  </div>
 
   <!-- event -1: spring after dinner -->
   <div class="event">
@@ -78,7 +135,8 @@
         <div class="city row muted-all">hamburg</div>
       </summary>
       <div class="event-image">
-        <img src="instagram_post_X.png" alt="not only | spring after dinner — saturday 30 may 2026 hamburg">
+        <img src="artwork-spring-after-dinner.png" alt="not only | spring after dinner — hamburg artwork">
+        <div class="event-credit">artist: amelie casper</div>
       </div>
     </details>
   </div>
@@ -86,49 +144,81 @@
   <!-- event 0: cape town market -->
   <div class="event">
     <div class="date row muted-all">13.02.2026</div>
-    <div class="title row">
-      <span class="tip muted-all" tabindex="0" data-tip="the event has sold out">not only | cape town market</span>
-      <span class="inline-actions">
-        <a class="btn" href="https://www.youtube.com/watch?v=uUFN-8tleP8" target="_blank" rel="noopener">aftermovie</a>
-      </span>
-    </div>
-    <div class="city row muted-all">cape town</div>
+    <details class="event-details">
+      <summary>
+        <div class="title row">
+          <span class="tip muted-all" tabindex="0" data-tip="the event has sold out">not only | cape town market</span>
+          <span class="inline-actions">
+            <a class="btn" href="https://www.youtube.com/watch?v=uUFN-8tleP8" target="_blank" rel="noopener">aftermovie</a>
+          </span>
+        </div>
+        <div class="city row muted-all">cape town</div>
+      </summary>
+      <div class="event-image">
+        <img src="artwork-cape-town-market.png" alt="not only | cape town market — cape town artwork">
+        <div class="event-credit">artist: jess elliot</div>
+      </div>
+    </details>
   </div>
 
   <!-- event 1: onda -->
   <div class="event">
     <div class="date row muted-all">21.11.2025</div>
-    <div class="title row">
-      <span class="tip muted-all" tabindex="0" data-tip="the event has sold out">not only | onda</span>
-      <span class="inline-actions">
-        <a class="btn" href="https://youtu.be/LUNb0P3T_eg" target="_blank" rel="noopener">aftermovie</a>
-      </span>
-    </div>
-    <div class="city row muted-all">lisbon</div>
+    <details class="event-details">
+      <summary>
+        <div class="title row">
+          <span class="tip muted-all" tabindex="0" data-tip="the event has sold out">not only | onda</span>
+          <span class="inline-actions">
+            <a class="btn" href="https://youtu.be/LUNb0P3T_eg" target="_blank" rel="noopener">aftermovie</a>
+          </span>
+        </div>
+        <div class="city row muted-all">lisbon</div>
+      </summary>
+      <div class="event-image">
+        <img src="artwork-onda.png" alt="not only | onda — lisbon artwork">
+        <div class="event-credit">artist: ricardo güttler</div>
+      </div>
+    </details>
   </div>
 
   <!-- event 2: dining studio -->
   <div class="event">
     <div class="date row muted-all">10.10.2025</div>
-    <div class="title row">
-      <span class="tip muted-all" tabindex="0" data-tip="the event has sold out">not only | the dining studio</span>
-      <span class="inline-actions">
-        <a class="btn" href="https://www.youtube.com/watch?v=leneJ0oleHU" target="_blank" rel="noopener">aftermovie</a>
-      </span>
-    </div>
-    <div class="city row muted-all">berlin</div>
+    <details class="event-details">
+      <summary>
+        <div class="title row">
+          <span class="tip muted-all" tabindex="0" data-tip="the event has sold out">not only | the dining studio</span>
+          <span class="inline-actions">
+            <a class="btn" href="https://www.youtube.com/watch?v=leneJ0oleHU" target="_blank" rel="noopener">aftermovie</a>
+          </span>
+        </div>
+        <div class="city row muted-all">berlin</div>
+      </summary>
+      <div class="event-image">
+        <img src="artwork-dining-studio.png" alt="not only | the dining studio — berlin artwork">
+        <div class="event-credit">artist: mona crusius</div>
+      </div>
+    </details>
   </div>
 
   <!-- event 3: yms -->
   <div class="event">
     <div class="date row muted-all">24.04.2025</div>
-    <div class="title row">
-      <span class="tip muted-all" tabindex="0" data-tip="the event has sold out">not only | yellow mountain spaces</span>
-      <span class="inline-actions">
-        <a class="btn" href="https://www.youtube.com/watch?v=jezUz7sro54" target="_blank" rel="noopener">aftermovie</a>
-      </span>
-    </div>
-    <div class="city row muted-all">lisbon</div>
+    <details class="event-details">
+      <summary>
+        <div class="title row">
+          <span class="tip muted-all" tabindex="0" data-tip="the event has sold out">not only | yellow mountain spaces</span>
+          <span class="inline-actions">
+            <a class="btn" href="https://www.youtube.com/watch?v=jezUz7sro54" target="_blank" rel="noopener">aftermovie</a>
+          </span>
+        </div>
+        <div class="city row muted-all">lisbon</div>
+      </summary>
+      <div class="event-image">
+        <img src="artwork-yellow-mountain-spaces.png" alt="not only | yellow mountain spaces — lisbon artwork">
+        <div class="event-credit">artist: teddy frederick</div>
+      </div>
+    </details>
   </div>
 
   <!-- vinyl prominent -->
